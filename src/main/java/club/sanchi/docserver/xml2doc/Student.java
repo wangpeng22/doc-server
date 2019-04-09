@@ -9,9 +9,10 @@ public class Student {
     private Integer imgWidth;
     private Integer imgHeight;
 
-    public Student(){
+    public Student() {
 
     }
+
     public Student(String name, String sex, Integer imgIndex, String imgBase64, Integer imgWidth, Integer imgHeight) {
         this.name = name;
         this.sex = sex;

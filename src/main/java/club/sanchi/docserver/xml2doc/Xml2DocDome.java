@@ -4,10 +4,9 @@ import club.sanchi.docserver.util.FileUtil;
 import freemarker.template.TemplateException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by wangpeng on 2019/1/8 15:16
@@ -31,27 +30,56 @@ public class Xml2DocDome {
 //        String targetFilePath = "src/main/resources/out/20190108.doc";
 //        FileUtil.xml2Doc(dataMap,templateFilePath,"/", targetFilePath, "/");
 
-        Map<String, Object> dataMap = new HashMap<>();
-        dataMap.put("title", "测试");
-        List<Row> r1list = new ArrayList<>();
-        Row row = new Row();
-        row.setC1("1");
-        row.setC2("张三");
-        row.setC3("男");
-        row.setC4("111");
+//        Map<String, Object> dataMap = new HashMap<>();
+//        dataMap.put("title", "测试");
+//        List<Row> r1list = new ArrayList<>();
+//        Row row = new Row();
+//        row.setC1("1");
+//        row.setC2("张三");
+//        row.setC3("男");
+//        row.setC4("111");
+//
+//        r1list.add(row);
+//
+//        Row row1 = new Row();
+//        row1.setC1("2");
+//        row1.setC2("李四");
+//        row1.setC3("女");
+//        row1.setC4("222");
+//        r1list.add(row1);
+//
+//        dataMap.put("r1list", r1list);
+//        FileUtil.exportExcel(dataMap,
+//                "src/main/resources/templates/20190108.xlsx",
+//                "src/main/resources/out/20190108.xlsx", "/");
 
-        r1list.add(row);
+        String smartCardNumber = "哈哈哈哈哈";
+        System.out.println("".trim().isEmpty());
+        if (null == smartCardNumber || smartCardNumber.trim().isEmpty()) {
+            System.out.println("1");
+        } else if (smartCardNumber.length() < 5
+                || smartCardNumber.length() > 20
+                || !smartCardNumber.matches("^[a-z0-9A-Z]+$")) {
+            System.out.println("2");
+        } else {
+            System.out.println("3");
+        }
+//        System.out.println(
+//
+//                "=============>"+
+//
+//                new SimpleDateFormat("yyyy").format(new Timestamp(Long.valueOf("1546272000000"))));
+//
+//        Calendar calendar = Calendar.getInstance();
+//
+//        calendar.set(2019, 0, 1, 0, 0, 0);
+//        calendar.set(Calendar.MILLISECOND, 0);
+//        System.out.println(calendar.getTime().getTime());
 
-        Row row1 = new Row();
-        row1.setC1("2");
-        row1.setC2("李四");
-        row1.setC3("女");
-        row1.setC4("222");
-        r1list.add(row1);
-
-        dataMap.put("r1list", r1list);
-        FileUtil.exportExcel(dataMap,
-                "src/main/resources/templates/20190108.xlsx",
-                "src/main/resources/out/20190108.xlsx", "/");
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(new Timestamp(Long.valueOf("1546272000000")));//设置起时间
+//        cal.add(Calendar.YEAR, 1);
+//        Date endTime = cal.getTime();
+//        System.out.println(endTime.getTime());
     }
 }

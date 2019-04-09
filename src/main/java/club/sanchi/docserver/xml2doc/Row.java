@@ -8,6 +8,7 @@ public class Row {
     private String c2 = "";
     private String c3 = "";
     private String c4 = "";
+
     public String getC1() {
         return c1;
     }
